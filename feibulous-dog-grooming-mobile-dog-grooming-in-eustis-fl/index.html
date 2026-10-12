@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Feibulous dog grooming——Mobile dog grooming in Eustis, FL — Never Miss Another Call</title>
+<style>
+:root{--blue:#0a5fd7;--dark:#0b2545;--teal:#06a6a6;--bg:#f4f8fc}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--dark);background:var(--bg);line-height:1.6}
+.wrap{max-width:960px;margin:auto;padding:0 20px}
+.hero{background:linear-gradient(135deg,var(--dark),var(--blue));color:#fff;padding:70px 0;text-align:center}
+.hero h1{font-size:40px;margin-bottom:14px}
+.hero p{font-size:19px;opacity:.92;max-width:640px;margin:0 auto 30px}
+.btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;padding:16px 38px;border-radius:30px;font-size:19px;font-weight:800;margin:6px}
+.btn.alt{background:transparent;border:2px solid #fff}
+.badge{display:inline-block;background:#fff2c9;color:#7a5b00;padding:5px 16px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:20px}
+section{padding:56px 0}
+h2{text-align:center;font-size:30px;margin-bottom:8px}
+.sub{text-align:center;color:#4a6285;margin-bottom:36px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:#fff;border-radius:14px;padding:26px;box-shadow:0 4px 18px #0b254512}
+.card h3{color:var(--blue);margin-bottom:8px;font-size:19px}
+.dark{background:var(--dark);color:#fff}
+.dark h2{color:#fff}.dark .sub{color:#9fb8d8}
+.price{font-size:52px;font-weight:800;color:var(--teal)}
+footer{background:#071a33;color:#7d97b8;text-align:center;padding:28px;font-size:13px}
+footer b{color:#fff}
+@media(max-width:640px){.hero h1{font-size:28px}}
+</style>
+</head>
+<body>
+<div class="hero"><div class="wrap">
+<div class="badge">DEMO BUILT FOR Feibulous dog grooming——Mobile dog grooming in Eustis, FL · Eustis, FL</div>
+<h1>Every missed call is a job<br>your competitor just won.</h1>
+<p>Mobile groomers can't answer the phone with clippers in hand — and every missed call books with someone else. Our AI receptionist answers 24/7, books the appointment, and texts you the details. Hear it for yourself right now.</p>
+<a class="btn" href="tel:+17372382845">📞 Call the live demo: (737) 238-2845</a>
+<button class="btn alt" id="vapi-btn" style="cursor:pointer">🎙 Or talk to it right here</button>
+</div></div>
+
+<section><div class="wrap">
+<h2>What your customers will hear</h2>
+<p class="sub">Ask it anything a caller would — it handles the whole conversation</p>
+<div class="grid">
+<div class="card"><h3>"Can you groom my doodle Saturday?"</h3><p>It takes the breed, size and address, and books the slot — while your hands are full of dog.</p></div>
+<div class="card"><h3>"How much for a bath and trim?"</h3><p>Quotes your ranges, qualifies the pet, and schedules a callback — no more phone tag.</p></div>
+<div class="card"><h3>"Do you come to my house?"</h3><p>Confirms your service area on the spot and books the appointment — then texts you a summary.</p></div>
+</div></div></section>
+
+<section><div class="wrap">
+<h2>Hear a real call</h2>
+<p class="sub">A Saturday booking call while you're mid-groom — listen to the AI handle it</p>
+<div style="max-width:520px;margin:0 auto"><video controls playsinline preload="metadata" src="../assets/demo-call.mp4" style="width:100%;max-width:360px;border-radius:14px;box-shadow:0 8px 30px #0b254533;background:#000;display:block;margin:0 auto"></video><p class="sub" style="margin-top:10px"><a href="../assets/demo-call.mp4">download the video</a></p></div>
+</div></section>
+
+<section class="dark"><div class="wrap">
+<h2>Try it free. Keep it for $25/mo.</h2>
+<p class="sub">No hardware. No new number. It forwards from the phones you already have.</p>
+<div style="text-align:center">
+<div class="price">$25<span style="font-size:20px;color:#9fb8d8">/mo</span></div>
+<p class="sub" style="margin:10px auto 30px">Answers every call · books jobs · texts you summaries · speaks English & Spanish</p>
+<a class="btn" href="tel:+17372382845">Call the demo line</a>
+</div></div></section>
+
+<footer><div class="wrap">
+Built for <b>Feibulous dog grooming——Mobile dog grooming in Eustis, FL</b> by Michael · reply to the email that sent you here or call/text <b>(352) 638-6720</b><br>
+<span style="opacity:.6">Demo preview — your real receptionist would use your business name and pricing</span>
+</div></footer>
+
+<script src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/index.min.js"></script>
+<script>
+const btn=document.getElementById('vapi-btn');
+let vapi=null,on=false;
+btn.onclick=()=>{
+  if(!vapi){
+    vapi=VapiWidget?null:null;
+  }
+};
+// lightweight manual integration
+(function(){
+  const script=document.createElement('script');
+  script.src='https://cdn.jsdelivr.net/npm/@vapi-ai/web@2.3.7/dist/index.iife.js';
+  script.onload=()=>{
+    const vapi=new Vapi('5674a08a-6fe9-4ef2-b80c-31d7968b7582');
+    btn.onclick=async()=>{
+      if(!on){btn.textContent='● Connecting…';await vapi.start('0ded2a30-3e6f-43ab-bd7b-9de54b55780a');on=true;btn.textContent='■ End call';btn.style.background='#c0392b'}
+      else{vapi.stop();on=false;btn.textContent='🎙 Or talk to it right here';btn.style.background='transparent'}
+    };
+    vapi.on('call-start',()=>{btn.textContent='■ Listening — speak now';});
+    vapi.on('call-end',()=>{on=false;btn.textContent='🎙 Talk to it again';btn.style.background='transparent'});
+  };
+  document.head.appendChild(script);
+})();
+</script>
+</body>
+</html>
