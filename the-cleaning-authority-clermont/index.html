@@ -34,7 +34,7 @@ footer b{color:#fff}
 <h1>Every missed call is a job<br>your competitor just won.</h1>
 <p>Cleaning companies lose bookings every time the phone rings mid-clean — your crew can't answer with gloves on. Our AI receptionist answers every call — 24/7, books the job, and texts you the details. Hear it for yourself right now.</p>
 <a class="btn" href="tel:+17372382845">📞 Call the live demo: (737) 238-2845</a>
-<button class="btn alt" id="vapi-btn" style="cursor:pointer">🎙 Or talk to it right here</button>
+<button class="btn alt" id="vapi-btn" style="cursor:pointer" data-vapi-public-key="5674a08a-6fe9-4ef2-b80c-31d7968b7582" data-vapi-assistant-id="0ded2a30-3e6f-43ab-bd7b-9de54b55780a" disabled>🎙 Or talk to it right here</button>
 </div></div>
 
 <section><div class="wrap">
@@ -47,7 +47,7 @@ footer b{color:#fff}
 </div></div></section>
 
 <section><div class="wrap">
-<h2>Hear a real call</h2>
+<h2>Hear a simulated call</h2>
 <p class="sub">A last-minute booking request — listen to the AI handle the whole thing</p>
 <div style="max-width:520px;margin:0 auto"><audio controls preload="metadata" src="../assets/demo-call-cleaning.mp3" style="width:100%;display:block"></audio><p class="sub" style="margin-top:10px"><a href="../assets/demo-call-cleaning.mp3">download the audio</a></p></div>
 </div></section>
@@ -63,33 +63,9 @@ footer b{color:#fff}
 
 <footer><div class="wrap">
 Built for <b>The Cleaning Authority - Clermont</b> by Michael · reply to the email that sent you here or call/text <b>(352) 638-6720</b><br>
-<span style="opacity:.6">Demo preview — your real receptionist would use your business name and pricing</span>
+<span style="opacity:.6">Simulated demo — no real appointments or confirmation texts are created here. Your service would be configured for your business.</span>
 </div></footer>
 
-<script src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/index.min.js"></script>
-<script>
-const btn=document.getElementById('vapi-btn');
-let vapi=null,on=false;
-btn.onclick=()=>{
-  if(!vapi){
-    vapi=VapiWidget?null:null;
-  }
-};
-// lightweight manual integration
-(function(){
-  const script=document.createElement('script');
-  script.src='https://cdn.jsdelivr.net/npm/@vapi-ai/web@2.3.7/dist/index.iife.js';
-  script.onload=()=>{
-    const vapi=new Vapi('5674a08a-6fe9-4ef2-b80c-31d7968b7582');
-    btn.onclick=async()=>{
-      if(!on){btn.textContent='● Connecting…';await vapi.start('0ded2a30-3e6f-43ab-bd7b-9de54b55780a');on=true;btn.textContent='■ End call';btn.style.background='#c0392b'}
-      else{vapi.stop();on=false;btn.textContent='🎙 Or talk to it right here';btn.style.background='transparent'}
-    };
-    vapi.on('call-start',()=>{btn.textContent='■ Listening — speak now';});
-    vapi.on('call-end',()=>{on=false;btn.textContent='🎙 Talk to it again';btn.style.background='transparent'});
-  };
-  document.head.appendChild(script);
-})();
-</script>
+<script src="../assets/receptionist-call.js" defer></script>
 </body>
 </html>
